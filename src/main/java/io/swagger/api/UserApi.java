@@ -8,6 +8,9 @@ package io.swagger.api;
 import java.util.List;
 import io.swagger.model.User;
 import io.swagger.annotations.*;
+
+import org.json.JSONObject;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,17 +28,19 @@ import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-05-29T19:38:52.589Z")
 
 @Api(value = "user", description = "the user API")
-public interface UserApi {
+public interface UserApi  {  //extends MongoRepository <User, String>
 
+	
     @ApiOperation(value = "Create user", nickname = "createUser", notes = "This can only be done by the logged in user.", tags={ "user", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation") })
     @RequestMapping(value = "/user",
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<Void> createUser(@ApiParam(value = "Created user object" ,required=true )  @Valid @RequestBody User body);
+    ResponseEntity<Boolean> createUser(@ApiParam(value = "Created user object" ,required=true )  @Valid @RequestBody User user);
 
 
+    
     @ApiOperation(value = "Creates list of users with given input array", nickname = "createUsersWithArrayInput", notes = "", tags={ "user", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation") })
@@ -102,5 +107,6 @@ public interface UserApi {
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.PUT)
     ResponseEntity<Void> updateUser(@ApiParam(value = "name that need to be updated",required=true) @PathVariable("username") String username,@ApiParam(value = "Updated user object" ,required=true )  @Valid @RequestBody User body);
+
 
 }

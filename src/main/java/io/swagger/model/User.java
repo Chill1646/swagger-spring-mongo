@@ -13,32 +13,31 @@ import javax.validation.constraints.*;
  * User
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-05-29T19:38:52.589Z")
 
 public class User   {
   @JsonProperty("id")
-  private Long id = null;
+  private Long id;
 
   @JsonProperty("username")
-  private String username = null;
+  private String username;
 
   @JsonProperty("firstName")
-  private String firstName = null;
+  private String firstName;
 
   @JsonProperty("lastName")
-  private String lastName = null;
+  private String lastName;
 
   @JsonProperty("email")
-  private String email = null;
+  private String email;
 
   @JsonProperty("password")
-  private String password = null;
+  private String password;
 
   @JsonProperty("phone")
-  private String phone = null;
+  private String phone;
 
   @JsonProperty("userStatus")
-  private Integer userStatus = null;
+  private Integer userStatus;
 
   public User id(Long id) {
     this.id = id;
@@ -69,7 +68,7 @@ public class User   {
    * Get username
    * @return username
   **/
-  @ApiModelProperty(value = "")
+  //@ApiModelProperty(value = "")
 
 
   public String getUsername() {
@@ -89,7 +88,7 @@ public class User   {
    * Get firstName
    * @return firstName
   **/
-  @ApiModelProperty(value = "")
+ // @ApiModelProperty(value = "")
 
 
   public String getFirstName() {
@@ -109,7 +108,7 @@ public class User   {
    * Get lastName
    * @return lastName
   **/
-  @ApiModelProperty(value = "")
+  //@ApiModelProperty(value = "")
 
 
   public String getLastName() {
@@ -129,7 +128,7 @@ public class User   {
    * Get email
    * @return email
   **/
-  @ApiModelProperty(value = "")
+ // @ApiModelProperty(value = "")
 
 
   public String getEmail() {
@@ -149,7 +148,7 @@ public class User   {
    * Get password
    * @return password
   **/
-  @ApiModelProperty(value = "")
+  //@ApiModelProperty(value = "")
 
 
   public String getPassword() {
@@ -169,7 +168,7 @@ public class User   {
    * Get phone
    * @return phone
   **/
-  @ApiModelProperty(value = "")
+  //@ApiModelProperty(value = "")
 
 
   public String getPhone() {
@@ -189,7 +188,7 @@ public class User   {
    * User Status
    * @return userStatus
   **/
-  @ApiModelProperty(value = "User Status")
+  //@ApiModelProperty(value = "User Status")
 
 
   public Integer getUserStatus() {
