@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 @EnableAutoConfiguration
-@ComponentScan(basePackages = { "io.swagger", "io.swagger.api", "io.swagger.mongodb" })
+@ComponentScan(basePackages = { "io.swagger", "io.swagger.api", "io.swagger.mongodb", "io.swagger.service" })
 public class Swagger2SpringBoot implements CommandLineRunner {
 
     @Override

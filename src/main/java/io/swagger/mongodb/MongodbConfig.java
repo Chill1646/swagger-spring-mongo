@@ -12,20 +12,19 @@ import com.mongodb.MongoClient;
 public class MongodbConfig {
 	@ComponentScan
 	@Configuration
-	@EnableMongoRepositories(basePackages = "io.swagger")
+	@EnableMongoRepositories (basePackages = { "io.swagger", "io.swagger.api", "io.swagger.service" })
 	public class dbConfig extends AbstractMongoConfiguration {
 
 		
 		@Bean
-		@Override
-		
+		@Override	
 		public MongoClient mongoClient() {
 			return new MongoClient("127.0.0.1", 27017);
 		}
 
 		@Override
 		protected String getDatabaseName() {
-			return "mylastdb";
+			return "test";
 		}
 
 	}

@@ -5,8 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
+
+import javax.persistence.GeneratedValue;
 import javax.validation.constraints.*;
 
 /**
@@ -14,9 +19,13 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+@Document
 public class User   {
-  @JsonProperty("id")
-  private Long id;
+	
+	@Id
+	@GeneratedValue
+	@JsonProperty("id")
+	private String id;
 
   @JsonProperty("username")
   private String username;
@@ -39,10 +48,15 @@ public class User   {
   @JsonProperty("userStatus")
   private Integer userStatus;
 
-  public User id(Long id) {
+  public User id(String id) {
+		this.id = id;
+		return this;
+	}
+  
+  /*public User id(Long id) {
     this.id = id;
     return this;
-  }
+  }*/
 
   /**
    * Get id
@@ -50,14 +64,24 @@ public class User   {
   **/
   @ApiModelProperty(value = "")
 
+  public String getId() {
+		return id;
+	}
 
-  public Long getId() {
+	public void setId(String id) {
+		this.id = id;
+	}
+  
+  
+  
+/*
+  private Long getId() {
     return id;
   }
 
   public void setId(Long id) {
     this.id = id;
-  }
+  }*/
 
   public User username(String username) {
     this.username = username;
